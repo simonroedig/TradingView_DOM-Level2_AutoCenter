@@ -13,7 +13,8 @@ from pynput import keyboard, mouse
 
 # Define key combination and title keywords for TradingView
 KEY_COMBINATION = ('shift', 'alt', 'c')
-TITLE_KEYWORDS = ["simon", "layout", "%"]
+TITLE_KEYWORDS_AND = ["%"]
+TITLE_KEYWORDS_OR = ["+", "−"]
 
 # Global flags to control the application
 enabled = False
@@ -45,7 +46,14 @@ def is_tradingview_window():
         buffer = ctypes.create_unicode_buffer(length + 1)
         ctypes.windll.user32.GetWindowTextW(handle, buffer, length + 1)
         title = buffer.value.lower()
-        is_match = all(keyword.lower() in title for keyword in TITLE_KEYWORDS)
+        
+        # Check that ALL keywords from TITLE_KEYWORDS_AND are present
+        and_match = all(keyword.lower() in title for keyword in TITLE_KEYWORDS_AND)
+        
+        # Check that at least ONE keyword from TITLE_KEYWORDS_OR is present
+        or_match = any(keyword.lower() in title for keyword in TITLE_KEYWORDS_OR)
+        
+        is_match = and_match and or_match
         logging.debug(f"Current window: {buffer.value}, Is TradingView: {is_match}")
         return is_match
     except Exception as e:
