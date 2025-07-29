@@ -44,7 +44,7 @@ This script enhances the Desktop Version of TradingView by automating the center
      - **Green**: Auto-centering is activated and currently centering the DOM on an eligible TradingView tab. <img src="screenshots/screenshot4.png" height="50">
 
 ## What the Script Does
-The script monitors the active window for TradingView (detected by specific title keywords like "%", "+", or "−"). When enabled and focused on a compatible TradingView tab, it automatically sends the `Shift + Alt + C` key combination to center the DOM at regular intervals, mimicking the manual auto-center action. It runs in the background via the system tray, updating its icon color to reflect its status. It does not interfere with core functionalities such as placing trades or other TradingView operations.
+The script monitors the active window for TradingView (detected by specific title keywords like "%", "+", or "−"). When enabled and focused on a compatible TradingView tab, it automatically sends the `Shift + Alt + C` key combination to center the DOM at regular intervals. It runs in the background via the system tray, updating its icon color to reflect its status. It does not interfere with core functionalities such as placing trades or other TradingView operations.
 
 ## Add to Windows Startup
 To automatically start the script when your Windows machine boots, follow these steps:
