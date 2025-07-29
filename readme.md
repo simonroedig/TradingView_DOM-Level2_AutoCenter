@@ -1,7 +1,8 @@
-# TradingView DOM Auto-Center Script
+# TradingView DOM (Level 2) AUTO-CENTER
 
-![TradingView Logo](screenshots/tw.png)
-![DOM View](screenshots/dom.png)
+<img src="screenshots/tw.png" width="300">
+<img src="screenshots/dom.png" width="300">
+
 This script enhances the Desktop Version of TradingView by automating the centering of the Level 2 (Depth of Market, or DOM) view, a feature no longer natively supported. In fast-moving markets, manually scrolling or clicking the auto-center icon can be tedious. This Python-based system tray application solves this by automatically centering the DOM when active.
 
 ## Setup
